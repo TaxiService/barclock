@@ -1,0 +1,46 @@
+{
+  "modules-center": [
+    "custom/seasoning#L",
+    "custom/sep",
+    "custom/update",
+    "custom/time",
+    "custom/sep",
+    "custom/seasoning#R",
+    "custom/screenrecording-indicator"
+  ],
+    "custom/time": {
+    "exec": "~/.config/waybar/bin/blinkclock.sh",
+    "interval": 1,
+    "format": "{}",
+    "tooltip": false,
+    "signal": 11,
+    "exec-on-event": true,
+    "on-click": "bash -lc '~/.config/waybar/bin/ctlclock.sh cycle $(~/.config/waybar/bin/which-output.sh) && pkill -RTMIN+11 waybar'"
+  },
+  "custom/seasoning#L": {
+    "exec": "~/.config/waybar/bin/seasoning.sh --timeofday",
+    "format": "{}",
+    "min-length": 20,
+    "align": 1.0,
+    "interval": 600,
+    "tooltip": false,
+    "signal": 12,
+    "exec-on-event": true,
+    "on-click": "bash -lc '~/.config/waybar/bin/seasoning.sh --toggle --output $(~/.config/waybar/bin/which-output.sh) && pkill -RTMIN+12 waybar && pkill -RTMIN+13 waybar'"
+  },
+  "custom/seasoning#R": {
+    "exec": "~/.config/waybar/bin/seasoning.sh --season",
+    "format": "{}",
+    "min-length": 20,
+    "align": 0.0,
+    "interval": 1800,
+    "tooltip": false,
+    "signal": 13,
+    "exec-on-event": true,
+    "on-click": "bash -lc '~/.config/waybar/bin/seasoning.sh --toggle --output $(~/.config/waybar/bin/which-output.sh) && pkill -RTMIN+12 waybar && pkill -RTMIN+13 waybar'"
+  },
+    "custom/sep": {
+      "format": " │ ",
+      "tooltip": false
+  },
+}

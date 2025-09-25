@@ -1,0 +1,14 @@
+#custom-sep {
+  opacity: 0.2;
+}
+
+#custom-seasoning {
+  opacity: 0.5;
+  font-size: 16px;
+  font-family: "Px437 IBM VGA 8x14";
+}
+
+#custom-time {
+  font-size: 16px;
+  font-family: "Px437 ToshibaTxL1 8x8";
+}
